@@ -7,8 +7,9 @@ function App() {
   const [idx, setIdx] = useState(1);
 
   const getdata = async () => {
+    setUserData([]);
     const responce = await axios.get(
-      "https://picsum.photos/v2/list?page=2&limit=100"
+      `https://picsum.photos/v2/list?page=${idx}&limit=100`
     );
     setUserData(responce.data);
     console.log("getting data");
@@ -16,10 +17,12 @@ function App() {
 
   useEffect(() => {
     getdata();
-  }, []);
+  }, [idx]);
 
-  let printData = "no User";
-  if (printData.length > 0) {
+  let printData = (
+    <h3 className="text-gray-500 text-sm font-semibold">Loading...</h3>
+  );
+  if (userData.length > 0) {
     printData = userData.map(function (elem, idx) {
       return (
         <a
