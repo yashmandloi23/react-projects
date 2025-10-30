@@ -1,0 +1,8 @@
+{
+  "name": "Copy of SmartVoice AI Mock Interview",
+  "description": "An intelligent platform for practicing job interviews. SmartVoice provides AI-driven questions, real-time feedback, and performance analysis to help you ace your next interview.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
