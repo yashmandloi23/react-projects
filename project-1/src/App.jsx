@@ -1,5 +1,7 @@
 import "./App.css";
+import { useState } from "react";
 import EcommerceCard from "./components/EcommerceCard";
+import Navbar from "./components/Navbar";
 
 function App() {
   const products = [
@@ -75,6 +77,8 @@ function App() {
     },
   ];
 
+  const [Theme, setTheme] = useState('light');
+
   return (
     <>
       <div className="flex flex-wrap gap-4">
@@ -87,6 +91,8 @@ function App() {
             description={product.description}
           />
         ))}
+        <h2>The theme is {Theme}</h2>
+        <Navbar theme={Theme} setTheme={setTheme}/>
       </div>
     </>
   );
